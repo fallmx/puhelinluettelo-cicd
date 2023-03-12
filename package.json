@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "cd frontend && npm build && mv build ..",
+    "build": "cd frontend && npm run build && mv build ..",
+    "lint": "eslint .",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

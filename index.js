@@ -18,6 +18,10 @@ app.use(morgan('tiny', {
 
 const Person = require('./models/person')
 
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+
 app.get('/info', (request, response) => {
   Person.count().then(count => {
     response.send(`<p>Phonebook has info for ${count} people</p><p>${Date()}</p>`)
@@ -94,7 +98,7 @@ app.delete('/api/persons/:id', (request, response, next) => {
     .catch(error => next(error))
 })
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || '8080'
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
