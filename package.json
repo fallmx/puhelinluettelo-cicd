@@ -1,0 +1,24 @@
+{
+  "name": "puhelinluettelo-backend",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "cd frontend && npm build && mv build ..",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "nodemon": "^2.0.20"
+  }
+}
