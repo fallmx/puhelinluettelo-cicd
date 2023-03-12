@@ -22,6 +22,10 @@ app.get('/health', (req, res) => {
   res.send('ok')
 })
 
+app.get('/version', (req, res) => {
+  res.send('1')
+})
+
 app.get('/info', (request, response) => {
   Person.count().then(count => {
     response.send(`<p>Phonebook has info for ${count} people</p><p>${Date()}</p>`)
