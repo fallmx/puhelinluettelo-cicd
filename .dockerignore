@@ -3,6 +3,4 @@ Dockerfile
 .dockerignore
 node_modules
 .git
-frontend/node_modules
-build
 .env

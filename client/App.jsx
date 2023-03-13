@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react'
+
+import React, { useEffect, useState } from 'react'
 import personService from './services/persons'
 import './index.css'
 
-const Filter = ({value, onChange}) => (
+const Filter = ({ value, onChange }) => (
   <div>filter shown with <input value={value} onChange={onChange}></input></div>
 )
 
-const PersonForm = ({onSubmit, nameValue, numberValue, onNameChange, onNumberChange}) => (
+const PersonForm = ({ onSubmit, nameValue, numberValue, onNameChange, onNumberChange }) => (
   <form onSubmit={onSubmit}>
     <div>name: <input value={nameValue} onChange={onNameChange}/></div>
     <div>number: <input value={numberValue} onChange={onNumberChange}/></div>
@@ -14,16 +15,16 @@ const PersonForm = ({onSubmit, nameValue, numberValue, onNameChange, onNumberCha
   </form>
 )
 
-const Person = ({person, delPerson}) => (
+const Person = ({ person, delPerson }) => (
   <div>
     {person.name} {person.number} <button onClick={() => delPerson(person.id)}>delete</button>
   </div>
 )
 
-const Persons = ({persons, delPerson}) => (
+const Persons = ({ persons, delPerson }) => (
   <div>
     {persons.map(person =>
-        <Person key={person.id} person={person} delPerson={delPerson}/>
+      <Person key={person.id} person={person} delPerson={delPerson}/>
     )}
   </div>
 )
@@ -103,7 +104,7 @@ const App = () => {
               setNewName('')
               setNewNumber('')
             })
-            .catch(error => {
+            .catch(() => {
               setError(true)
               setMessage(`Information of ${newName} has already been removed from server`)
               setPersons(persons.filter(p => p.id !== person.id))

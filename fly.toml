@@ -4,10 +4,9 @@ app = "twilight-leaf-2655"
 kill_signal = "SIGINT"
 kill_timeout = 5
 primary_region = "arn"
-processes = []
 
 [processes]
-  app = "node index.js"
+  app = "node ./server/index.js"
 
 [env]
   PORT = "8080"

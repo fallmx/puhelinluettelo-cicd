@@ -1,8 +1,9 @@
 require('dotenv').config()
+const path = require('path')
 
 const express = require('express')
 const app = express()
-app.use(express.static('build'))
+app.use(express.static(path.join(__dirname, '../dist')))
 app.use(express.json())
 
 const morgan = require('morgan')
@@ -23,7 +24,7 @@ app.get('/health', (req, res) => {
 })
 
 app.get('/version', (req, res) => {
-  res.send('1')
+  res.send('2')
 })
 
 app.get('/info', (request, response) => {
